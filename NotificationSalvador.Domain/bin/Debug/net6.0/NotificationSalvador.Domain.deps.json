@@ -1,0 +1,23 @@
+{
+  "runtimeTarget": {
+    "name": ".NETCoreApp,Version=v6.0",
+    "signature": ""
+  },
+  "compilationOptions": {},
+  "targets": {
+    ".NETCoreApp,Version=v6.0": {
+      "NotificationSalvador.Domain/1.0.0": {
+        "runtime": {
+          "NotificationSalvador.Domain.dll": {}
+        }
+      }
+    }
+  },
+  "libraries": {
+    "NotificationSalvador.Domain/1.0.0": {
+      "type": "project",
+      "serviceable": false,
+      "sha512": ""
+    }
+  }
+}
