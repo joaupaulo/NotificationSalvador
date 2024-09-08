@@ -8,10 +8,10 @@ namespace NotificationSalvador.Domain.Models
 {
     public class Policlinica
     {
-        public int codigo { get; set; }
+        public string codigo { get; set; }
         public string nome { get; set; }
         public string nomePoliclinicas { get; set; }
-        public int quantidadeVagas { get; set; }
-        public List<AvailableDates> availableDates { get; set; }
+        public string quantidadeVagas { get; set; }
+        public string avaliablesDay { get ; set; }
     }
 }

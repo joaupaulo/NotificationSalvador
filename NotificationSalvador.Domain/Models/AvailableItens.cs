@@ -8,7 +8,7 @@ namespace NotificationSalvador.Domain.Models
 {
     public class AvailableItens
     {
-        public string Quantidade { get; set; }  
+        public string Quantidade { get; set; }
         public string Data { get; set; }
     }
 }

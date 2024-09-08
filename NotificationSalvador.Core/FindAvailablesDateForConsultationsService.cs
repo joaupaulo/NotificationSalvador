@@ -22,16 +22,40 @@ namespace NotificationSalvador.Core
             _httpClient = httpClient;
         }
 
-        public async Task Build_Information_Of_Consultation(List<AvailableItens> availableItens)
+        public async Task<List<Policlinica>> Build_Information_Of_Consultation(List<List<AvailableItens>> availableItens)
         {
-            Uri Uri = new("");
+            Uri uri = new("https://servicosaocidadao.ba.gov.br/api/conteudo/v1/catalogo/pesquisa-avancada?texto=policlinica&categorias=&orgaos=");
 
+            var request = new HttpRequestMessage(HttpMethod.Get, uri);
+            
+            var response = await _httpClient.SendAsync(request);
+
+            var responseServicoAsJson = response.Content.ReadFromJsonAsync<List<Servico>>().Result;
+
+            List<Policlinica> policlinicas = new List<Policlinica>();
+
+            for (var i = 0; i <=  availableItens.Count; i++) 
+            {
+                Policlinica policlinica = new Policlinica
+                {
+                    codigo = responseServicoAsJson[i].Codigo,
+                    nome = responseServicoAsJson[i].NomeCategoria,
+                    nomePoliclinicas = responseServicoAsJson[i].Nome,
+                    quantidadeVagas = availableItens[i][0].Quantidade,
+                    avaliablesDay = availableItens[i][0].Data
+                    
+                };
+
+                policlinicas.Add(policlinica);
+            }
+
+            return policlinicas;
         }
 
-        public async Task<List<AvailableItens>> GetAvailables_Date_For_Consultation()
+        public async Task GetAvailables_Date_For_Consultation()
         {
-            List<AvailableItens> healthPostAvailables = new();
-            
+            List<List<AvailableItens>> healthPostAvailables = new();
+
             for (int j = 596; j <= 597; j++)
             {
                 for (int i = 4638; i <= 4658; i++)
@@ -44,12 +68,12 @@ namespace NotificationSalvador.Core
 
                     var response = await _httpClient.SendAsync(request);
 
-                    var ResponseAsJson = response.Content.ReadFromJsonAsync<AvailableItens>().Result;
+                    var responseAvailableItensAsJson = response.Content.ReadFromJsonAsync<List<AvailableItens>>().Result;
 
-                    healthPostAvailables.Add(ResponseAsJson);
+                    healthPostAvailables.Add(responseAvailableItensAsJson);
                 }
             }
-            return healthPostAvailables;
+            Build_Information_Of_Consultation(healthPostAvailables);
         }
     }
 }

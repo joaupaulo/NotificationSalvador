@@ -9,6 +9,6 @@ namespace NotificationSalvador.Core.Interface
 {
     public interface IFindAvailablesDateForConsultationsService
     {
-        Task<List<AvailableItens>> GetAvailables_Date_For_Consultation();
+        Task GetAvailables_Date_For_Consultation();
     }
 }

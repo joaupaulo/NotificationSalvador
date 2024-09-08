@@ -498,8 +498,16 @@
         }
       },
       "NotificationSalvador.Core/1.0.0": {
+        "dependencies": {
+          "NotificationSalvador.Domain": "1.0.0"
+        },
         "runtime": {
           "NotificationSalvador.Core.dll": {}
+        }
+      },
+      "NotificationSalvador.Domain/1.0.0": {
+        "runtime": {
+          "NotificationSalvador.Domain.dll": {}
         }
       }
     }
@@ -784,6 +792,11 @@
       "hashPath": "system.text.json.8.0.0.nupkg.sha512"
     },
     "NotificationSalvador.Core/1.0.0": {
+      "type": "project",
+      "serviceable": false,
+      "sha512": ""
+    },
+    "NotificationSalvador.Domain/1.0.0": {
       "type": "project",
       "serviceable": false,
       "sha512": ""

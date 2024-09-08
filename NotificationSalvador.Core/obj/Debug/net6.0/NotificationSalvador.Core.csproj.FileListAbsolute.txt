@@ -9,3 +9,7 @@ C:\Users\João Paulo\source\repos\NotificationSalvador\NotificationSalvador.Core
 C:\Users\João Paulo\source\repos\NotificationSalvador\NotificationSalvador.Core\obj\Debug\net6.0\refint\NotificationSalvador.Core.dll
 C:\Users\João Paulo\source\repos\NotificationSalvador\NotificationSalvador.Core\obj\Debug\net6.0\NotificationSalvador.Core.pdb
 C:\Users\João Paulo\source\repos\NotificationSalvador\NotificationSalvador.Core\obj\Debug\net6.0\ref\NotificationSalvador.Core.dll
+C:\Users\João Paulo\source\repos\NotificationSalvador\NotificationSalvador.Core\bin\Debug\net6.0\NotificationSalvador.Domain.dll
+C:\Users\João Paulo\source\repos\NotificationSalvador\NotificationSalvador.Core\bin\Debug\net6.0\NotificationSalvador.Domain.pdb
+C:\Users\João Paulo\source\repos\NotificationSalvador\NotificationSalvador.Core\obj\Debug\net6.0\NotificationSalvador.Core.csproj.AssemblyReference.cache
+C:\Users\João Paulo\source\repos\NotificationSalvador\NotificationSalvador.Core\obj\Debug\net6.0\NotificationSalvador.Core.csproj.CopyComplete

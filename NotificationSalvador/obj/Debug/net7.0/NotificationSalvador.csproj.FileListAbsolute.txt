@@ -67,3 +67,5 @@ C:\Users\João Paulo\source\repos\NotificationSalvador\NotificationSalvador\bin\
 C:\Users\João Paulo\source\repos\NotificationSalvador\NotificationSalvador\bin\Debug\net7.0\runtimes\browser\lib\net7.0\System.Text.Encodings.Web.dll
 C:\Users\João Paulo\source\repos\NotificationSalvador\NotificationSalvador\bin\Debug\net7.0\NotificationSalvador.Core.dll
 C:\Users\João Paulo\source\repos\NotificationSalvador\NotificationSalvador\bin\Debug\net7.0\NotificationSalvador.Core.pdb
+C:\Users\João Paulo\source\repos\NotificationSalvador\NotificationSalvador\bin\Debug\net7.0\NotificationSalvador.Domain.dll
+C:\Users\João Paulo\source\repos\NotificationSalvador\NotificationSalvador\bin\Debug\net7.0\NotificationSalvador.Domain.pdb
