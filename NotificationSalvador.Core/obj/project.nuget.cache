@@ -1,8 +1,11 @@
 {
   "version": 2,
-  "dgSpecHash": "2U6jEDBq2K8lthGFPm+5KowVgt48vNWNBY70V/XppE5TPulYrzoKGwrp5OFx9cMTgRP/Rwh6LjnBVYwtlOPJ2Q==",
+  "dgSpecHash": "Rj02VRKzKyKoFQN8coMwTtVUR8TzHG9DEYPkEWO7gUtsuGWR/RbyWPA8EdTmxs5kq5Fy2EE9IZ9uZXftbnsQ+w==",
   "success": true,
   "projectFilePath": "C:\\Users\\João Paulo\\source\\repos\\NotificationSalvador\\NotificationSalvador.Core\\NotificationSalvador.Core.csproj",
-  "expectedPackageFiles": [],
+  "expectedPackageFiles": [
+    "C:\\Users\\João Paulo\\.nuget\\packages\\microsoft.extensions.dependencyinjection.abstractions\\8.0.0\\microsoft.extensions.dependencyinjection.abstractions.8.0.0.nupkg.sha512",
+    "C:\\Users\\João Paulo\\.nuget\\packages\\microsoft.extensions.logging.abstractions\\8.0.0\\microsoft.extensions.logging.abstractions.8.0.0.nupkg.sha512"
+  ],
   "logs": []
 }

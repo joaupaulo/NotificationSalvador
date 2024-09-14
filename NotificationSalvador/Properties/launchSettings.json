@@ -16,40 +16,43 @@
       "launchUrl": "swagger",
       "environmentVariables": {
         "ASPNETCORE_ENVIRONMENT": "Development",
-        "BEARER_TOKEN_SERVICO_CIDADAO_BA": ""
-      "dotnetRunMessages": true,
-      "applicationUrl": "https://localhost:7008;http://localhost:5062"
-    },
-    "IIS Express": {
-      "commandName": "IISExpress",
-      "launchBrowser": true,
-      "launchUrl": "swagger",
-      "environmentVariables": {
-        "ASPNETCORE_ENVIRONMENT": "Development"
+        "BEARER_TOKEN_SERVICO_CIDADAO_BA": "",
+        "dotnetRunMessages": "true",
+        "applicationUrl": "https://localhost:7008;http://localhost:5062"
       }
     },
-    "Docker": {
-      "commandName": "Docker",
-      "launchBrowser": true,
-      "launchUrl": "{Scheme}://{ServiceHost}:{ServicePort}/swagger",
-      "environmentVariables": {
-        "ASPNETCORE_URLS": "https://+:443;http://+:80"
+    
+      "IIS Express": {
+        "commandName": "IISExpress",
+        "launchBrowser": true,
+        "launchUrl": "swagger",
+        "environmentVariables": {
+          "ASPNETCORE_ENVIRONMENT": "Development"
+        }
       },
-      "publishAllPorts": true,
-      "useSSL": true
+      "Docker": {
+        "commandName": "Docker",
+        "launchBrowser": true,
+        "launchUrl": "{Scheme}://{ServiceHost}:{ServicePort}/swagger",
+        "environmentVariables": {
+          "ASPNETCORE_URLS": "https://+:443;http://+:80"
+        },
+        "publishAllPorts": true,
+        "useSSL": true
+      },
+      "Perfil 1": {
+        "commandName": "Project",
+        "launchBrowser": true
+      }
     },
-    "Perfil 1": {
-      "commandName": "Project",
-      "launchBrowser": true
-    }
-  },
-  "$schema": "https://json.schemastore.org/launchsettings.json",
-  "iisSettings": {
-    "windowsAuthentication": false,
-    "anonymousAuthentication": true,
-    "iisExpress": {
-      "applicationUrl": "http://localhost:51717",
-      "sslPort": 44376
+    "$schema": "https://json.schemastore.org/launchsettings.json",
+    "iisSettings": {
+      "windowsAuthentication": false,
+      "anonymousAuthentication": true,
+      "iisExpress": {
+        "applicationUrl": "http://localhost:51717",
+        "sslPort": 44376
+      }
     }
   }
 }

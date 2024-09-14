@@ -1,4 +1,5 @@
-﻿using NotificationSalvador.Core.Interface;
+﻿using Microsoft.Extensions.Logging;
+using NotificationSalvador.Core.Interface;
 using NotificationSalvador.Domain.Models;
 using System;
 using System.Collections.Generic;
@@ -15,11 +16,14 @@ namespace NotificationSalvador.Core
 {
     public class FindAvailablesDateForConsultationsService : IFindAvailablesDateForConsultationsService
     {
+
+        private readonly ILogger<FindAvailablesDateForConsultationsService> _logger;
         public HttpClient _httpClient;
         public readonly string TOKEN_SERVICO_CIDADAO = Environment.GetEnvironmentVariable("BEARER_TOKEN_SERVICO_CIDADAO_BA");
-        public FindAvailablesDateForConsultationsService(HttpClient httpClient)
+        public FindAvailablesDateForConsultationsService(HttpClient httpClient, ILogger<FindAvailablesDateForConsultationsService> logger)
         {
-            _httpClient = httpClient;
+            _httpClient = httpClient; 
+            _logger = logger;
         }
 
         public async Task<List<Policlinica>> Build_Information_Of_Consultation(List<List<AvailableItens>> availableItens)
@@ -34,8 +38,10 @@ namespace NotificationSalvador.Core
 
             List<Policlinica> policlinicas = new List<Policlinica>();
 
-            for (var i = 0; i <=  availableItens.Count; i++) 
+            for (var i = 0; i < availableItens.Count ; i++) 
             {
+                _logger.LogInformation($"Realizando ITERAÇÃO {i}");
+
                 Policlinica policlinica = new Policlinica
                 {
                     codigo = responseServicoAsJson[i].Codigo,
@@ -43,7 +49,7 @@ namespace NotificationSalvador.Core
                     nomePoliclinicas = responseServicoAsJson[i].Nome,
                     quantidadeVagas = availableItens[i][0].Quantidade,
                     avaliablesDay = availableItens[i][0].Data
-                    
+
                 };
 
                 policlinicas.Add(policlinica);
@@ -70,7 +76,15 @@ namespace NotificationSalvador.Core
 
                     var responseAvailableItensAsJson = response.Content.ReadFromJsonAsync<List<AvailableItens>>().Result;
 
-                    healthPostAvailables.Add(responseAvailableItensAsJson);
+                    if (responseAvailableItensAsJson.Any())
+                    {
+                        healthPostAvailables.Add(responseAvailableItensAsJson);
+                    }
+
+                    if (!healthPostAvailables.Any())
+                    {
+                        throw new Exception("Não há datas disponiveis para realizar consultas");
+                    }
                 }
             }
             Build_Information_Of_Consultation(healthPostAvailables);
